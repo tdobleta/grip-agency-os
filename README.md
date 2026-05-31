@@ -1,62 +1,69 @@
-# GRIP — Agency Operating System
+# GRIP — Agencia de Automatizaciones
 
-**GRIP** is an automation agency being built to turn inbound business opportunities into booked, paid and retained customers through reliable automation systems.
+**GRIP** vende e implementa automatizaciones concretas para negocios: desde una sola acción automática hasta sistemas compuestos por varias automatizaciones conectadas.
 
-> Current working positioning: **GRIP instala sistemas que convierten consultas en reservas, pagos y clientes recurrentes para negocios que hoy dependen de responder todo manualmente.**
+> Posicionamiento de trabajo: **Automatizaciones prácticas para que los negocios ahorren tiempo, respondan mejor y ordenen sus operaciones.**
 
-## Current stage
+## Qué vende GRIP
 
-**Gate 0 — Foundation in progress.**
-
-The project is intentionally starting with intelligence, product validation and execution discipline before public launch or broad branding work.
-
-## Initial practical demonstrator
-
-### GRIP Beauty — WhatsApp Booking with Deposit
-
-Target: peluquerías y barberías.
-
-Candidate end-to-end flow:
+GRIP no está atada a un rubro ni a un único producto cerrado. El catálogo se organiza por automatizaciones reutilizables:
 
 ```text
-WhatsApp inquiry
-  -> service selection
-  -> available time slots
-  -> customer selects appointment
-  -> deposit/payment link
-  -> confirmed payment webhook
-  -> confirmed appointment
-  -> reminder
-  -> review / rebooking follow-up
+Agendar un turno automáticamente
+Enviar recordatorios
+Guardar contactos o reservas en un CRM
+Responder consultas frecuentes
+Capturar leads desde formularios o mensajes
+Solicitar reseñas después de una visita
+Notificar pagos o estados
+Crear reportes automáticos
+Reactivar clientes inactivos
+Sincronizar datos entre herramientas
 ```
 
-This is a demonstrator and first product candidate, not a validated final market choice yet.
+Una automatización puede venderse individualmente o combinarse con otras según el problema del cliente.
 
-## Repository structure
+## Cómo se muestra la marca
+
+Los rubros son **vitrinas y ejemplos de aplicación**, no unidades de producto obligatorias:
 
 ```text
-docs/                 Master plan, decisions, security and benchmark protocol
-intelligence/         Market/provider research and evidence
-sources/              External template and repository register
-products/             Product candidates and validated offerings
-brand/                Positioning and brand system
-experiments/          Tool benchmarks and test results
+GRIP
+├── Peluquerías: turnos, recordatorios, rebooking
+├── Hotelería: consultas, seguimiento, check-in, CRM
+├── Gastronomía: reservas, reseñas, registros
+├── Servicios: leads, presupuestos, seguimiento
+└── Cualquier negocio con tareas repetitivas automatizables
 ```
 
-## Operating rules
+## Etapa actual
 
-- Tools are selected by evidence and benchmark results, never by popularity.
-- External workflows are not sold as-is: license, security, adaptation and testing are mandatory.
-- Production secrets, API tokens and customer data must never be committed here.
-- Research agents and production actions must be permission-separated.
-- Branding is built on validated offers and demos, not on vague automation claims.
+**Gate 0 — Fundación en corrección y armado del catálogo modular.**
 
-## Brand
+El objetivo inmediato es construir una biblioteca profesional de automatizaciones, fuentes, templates, integraciones y pruebas, antes de decidir qué demos publicar o qué sistemas ofrecer en paquetes.
 
-- **Name:** GRIP
-- **Visual direction:** monochrome technology identity; geometric `G` symbol + `Grip` wordmark.
-- **Working line:** `Agarrá cada oportunidad.`
+## Estructura del repositorio
 
-## Founder
+```text
+docs/                 Plan maestro, decisiones, seguridad y método de evaluación
+catalog/              Catálogo de automatizaciones vendibles y módulos reutilizables
+intelligence/         Investigación de mercado, proveedores y oportunidades
+sources/              Registro de repositorios/templates externos y licencias
+examples/             Ejemplos por rubro y demos sanitizadas
+brand/                Posicionamiento e identidad visual
+experiments/          Benchmarks y resultados de pruebas
+```
 
-Martín Rubio — Mendoza, Argentina.
+## Reglas operativas
+
+- Una automatización entra al catálogo por utilidad, prueba y seguridad; no por popularidad.
+- Los workflows externos no se venden tal cual: se revisan licencia, funcionamiento, datos, seguridad y adaptación.
+- Se puede vender una automatización simple sin convertirla en un “producto vertical” grande.
+- Los paquetes por rubro se crean únicamente cuando combinan módulos ya entendidos y probados.
+- Nunca se guardan credenciales, tokens ni datos de clientes en este repositorio público.
+
+## Marca
+
+- **Nombre:** GRIP
+- **Dirección visual inicial:** identidad tecnológica monocromática; símbolo geométrico `G` + wordmark `Grip`.
+- **Fundador:** Martín Rubio — Mendoza, Argentina.
