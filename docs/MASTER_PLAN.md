@@ -1,168 +1,209 @@
-# GRIP — Master Plan v0.1
+# GRIP — Master Plan v0.2
 
 **Created:** 2026-05-30  
 **Founder:** Martín Rubio  
-**Status:** Gate 0 — Foundation in progress
+**Status:** Gate 0 — Fundación del catálogo modular
 
-## 1. Business thesis
+## 1. Qué es GRIP
 
-GRIP will be an automation agency for real businesses. It will identify automation opportunities, study proven international offers and systems, transform valid building blocks into reliable products adapted to Argentina/LATAM, and sell implementation plus recurring operation/support.
+GRIP es una agencia que descubre, adapta, implementa y mantiene **automatizaciones prácticas para negocios**.
 
-GRIP does not sell “AI” or “workflows” as abstractions. It sells measurable business outcomes:
+GRIP puede vender:
 
-- more enquiries answered;
-- more bookings confirmed;
-- deposits collected before service;
-- fewer no-shows;
-- more reviews and repeat customers;
-- less manual operational burden.
+- una automatización individual;
+- varias automatizaciones combinadas;
+- un sistema completo armado con módulos ya probados.
 
-## 2. Initial brand architecture
+La unidad básica del negocio no es el rubro ni un “producto vertical” cerrado. La unidad básica es la **automatización vendible**.
 
-One master brand, vertical solutions underneath it:
+Ejemplos:
+
+- agendar un turno automáticamente;
+- enviar un recordatorio;
+- guardar datos de un formulario o conversación en un CRM;
+- crear un lead cuando alguien consulta;
+- enviar un pedido de reseña;
+- avisar internamente cuando entra una reserva o un pago;
+- sincronizar datos entre herramientas;
+- generar reportes periódicos;
+- reactivar clientes inactivos.
+
+## 2. Cómo se vende
+
+### A. Automatización individual
+
+Un negocio compra una acción concreta porque tiene un problema claro.
+
+Ejemplo:
+
+> “Cuando alguien completa tu formulario, guardamos sus datos automáticamente en tu CRM y te llega una notificación.”
+
+### B. Combinación de automatizaciones
+
+Un negocio compra varias automatizaciones conectadas.
+
+Ejemplo:
+
+```text
+Consulta de turno
+ -> registro de cliente
+ -> agenda
+ -> recordatorio
+ -> reseña posterior
+```
+
+### C. Paquete presentado por rubro
+
+GRIP puede mostrar en Instagram o en una demo cómo se aplican varios módulos a un sector. Esto facilita que el cliente se identifique, pero no limita lo que vendemos.
 
 ```text
 GRIP
-├── GRIP Beauty   — peluquerías, barberías, estética
-├── GRIP Food     — restaurantes, cafés, reservas/reseñas
-├── GRIP Stay     — hoteles, cabañas, alojamientos
-└── GRIP Custom   — later, validated custom verticals
+├── Peluquerías / Barberías — ejemplos de turnos, recordatorios, reseñas
+├── Hotelería — ejemplos de consultas, seguimiento, CRM y notificaciones
+├── Gastronomía — ejemplos de reservas, reviews y reportes
+└── Servicios — ejemplos de leads, presupuestos y seguimientos
 ```
 
-The first practical demonstrator is **GRIP Beauty**, because the booking/deposit flow is easy to understand and demonstrate. This does not yet constitute a final evidence-based vertical priority decision.
+## 3. Posicionamiento inicial corregido
 
-## 3. Initial product candidate — GRIP Beauty
+### Propuesta principal de trabajo
 
-### Promise under test
+> **GRIP automatiza tareas repetitivas de negocios: turnos, recordatorios, datos, leads, pagos, seguimientos y reportes.**
 
-**Turnos automáticos por WhatsApp con seña, confirmación, recordatorio y recuperación de clientes.**
+### Qué no debe comunicar GRIP
 
-### Candidate workflow
+GRIP no debe presentarse como:
+
+- una aplicación única para barberías;
+- un SaaS cerrado para un rubro;
+- una promesa de “IA mágica”;
+- una agencia que solo instala una clase de flujo.
+
+## 4. Arquitectura del negocio
+
+### A. Catálogo de automatizaciones
+
+Es el corazón comercial. Contiene módulos que se pueden ofrecer individualmente o combinar:
+
+- entrada/disparador;
+- acción automática;
+- apps/APIs involucradas;
+- rubros donde aplica;
+- dificultad de implementación;
+- dependencias;
+- precio/costo estimado más adelante;
+- demo disponible;
+- estado de auditoría y prueba.
+
+### B. Biblioteca de fuentes y templates
+
+Guarda repositorios, templates, licencias y patrones que puedan acelerar la creación de automatizaciones, sin vender material externo tal cual.
+
+### C. Inteligencia de mercado
+
+Detecta:
+
+- qué automatizaciones se venden afuera;
+- cuáles parecen tener demanda local;
+- qué tareas repetitivas existen por rubro;
+- qué herramientas y APIs permiten implementarlas mejor.
+
+### D. Taller técnico
+
+Convierte una oportunidad en una automatización real:
 
 ```text
-Customer writes on WhatsApp
-  -> chooses service
-  -> receives real available slots
-  -> chooses slot
-  -> receives deposit/payment link
-  -> payment webhook confirms payment
-  -> appointment is written to schedule/database
-  -> confirmation is sent
-  -> reminder is sent before appointment
-  -> review/rebooking message is sent after attendance
+Problema concreto
+ -> flujo mínimo
+ -> integraciones
+ -> prueba
+ -> demo
+ -> oferta individual o paquete
 ```
 
-### Business pain addressed
+### E. Marca y ventas
 
-- messages answered late;
-- appointments coordinated manually;
-- no-shows without deposit;
-- customer history lost in chats;
-- missed opportunities for reviews and repeat visits.
+Muestra automatizaciones mediante ejemplos claros. Las destacadas por rubro son una forma de ordenar la exhibición, no la estructura interna del negocio.
 
-## 4. Operating system architecture
+## 5. Catálogo inicial de familias de automatización
 
-### A. Intelligence Layer
+| Familia | Ejemplos de automatizaciones vendibles | Aplicación posible |
+|---|---|---|
+| Agenda y reservas | crear turno, consultar disponibilidad, confirmar o reprogramar | peluquerías, hoteles, consultorios, talleres |
+| Recordatorios y notificaciones | recordar turno, avisar reserva, alerta interna | cualquier negocio con agenda/pedidos |
+| CRM y datos | guardar contacto, crear lead, actualizar etapa, registrar consulta | servicios, inmobiliarias, comercios |
+| Atención automática | respuesta inicial, preguntas frecuentes, clasificación de consulta | WhatsApp, Instagram, web |
+| Pagos y comprobación | enviar link, registrar estado, notificar pago | reservas, servicios, pedidos |
+| Reputación y retención | solicitar reseña, volver a reservar, recuperar inactivos | negocios con recurrencia |
+| Ventas y seguimiento | responder lead, enviar presupuesto, follow-up | agencias, oficios, ventas B2B/B2C |
+| Operación interna | reportes, tareas, alertas, sincronización | cualquier pyme |
 
-Finds and validates market opportunity: competitor offers, ads, demand signals, potential local clients, repositories, templates and technical alternatives.
+## 6. Principios no negociables
 
-### B. Tool Gateway
+1. La automatización se selecciona por problema real, simplicidad de venta, capacidad técnica y seguridad.
+2. Ninguna herramienta se elige por fama; debe pasar una prueba asociada a automatizaciones del catálogo.
+3. Ningún workflow externo se revende tal cual; debe revisarse licencia, seguridad, adaptación y funcionamiento.
+4. Una automatización simple puede ser un producto válido sin necesidad de armar un sistema vertical completo.
+5. Los paquetes por rubro se construyen después de tener módulos útiles y demostrables.
+6. Investigación externa y ejecución sobre cuentas reales deben permanecer separadas por permisos.
+7. Este repositorio público no almacena secretos, credenciales ni datos privados de clientes.
 
-Provides controlled access to APIs/tools for agents, with permission boundaries, credential separation and auditability.
+## 7. Gates corregidos
 
-### C. Source & License Library
+### Gate 0 — Fundación del catálogo
 
-Records every third-party template, workflow, repository and asset together with source, license, restrictions, required modifications and audit status.
+**Objetivo:** ordenar GRIP como agencia de automatizaciones modulares.
 
-### D. Product Factory
+Condición de cierre:
 
-Converts a valid opportunity into a product: flow design, integrations, code, messaging, dashboard/reporting, QA, security and demo assets.
+- repositorio y plan maestro corregidos;
+- catálogo inicial de módulos creado;
+- fuentes externas registradas;
+- seguridad y benchmark definidos;
+- primer grupo de automatizaciones candidatas elegido para auditoría.
 
-### E. Delivery Runtime
+### Gate 1 — Auditoría y selección de módulos
 
-Runs real customer automations: messages, scheduling, payment confirmation, CRM writes, reminders, reports and monitoring.
+**Objetivo:** encontrar automatizaciones reutilizables y decidir cuáles merecen demo.
 
-### F. Brand & Sales Engine
+Pruebas iniciales:
 
-Packages validated products into positioning, creative assets, demos, outreach and onboarding.
+1. Extraer automatizaciones disponibles de repositorios semilla.
+2. Clasificarlas por familia: agenda, CRM, recordatorio, atención, pago, seguimiento, reporte.
+3. Identificar integraciones, licencia, complejidad y riesgo.
+4. Priorizar módulos fáciles de demostrar y vender.
 
-## 5. Non-negotiable principles
+### Gate 2 — Demos de automatizaciones individuales
 
-1. No tool is selected because it is popular; it must pass a benchmark linked to a real GRIP use case.
-2. No external workflow is sold as-is; licensing, security review, adaptation, testing and documentation are mandatory.
-3. Research systems may read hostile/untrusted content and must not hold production credentials or dangerous write access.
-4. Production automations must be observable, retry-safe where necessary, and protected against duplicate financial or booking actions.
-5. No API keys, secrets, client credentials or customer personal data may be stored in this public repository.
-6. Brand claims must be supported by actual product capabilities and later by measured outcomes.
+**Objetivo:** construir demostraciones pequeñas y comprensibles.
 
-## 6. Project gates
+Ejemplos de demo:
 
-### Gate 0 — Foundation
+- formulario o mensaje → nuevo lead guardado en CRM;
+- turno creado → recordatorio automático;
+- cliente atendido → solicitud automática de reseña;
+- consulta entrante → respuesta y registro interno.
 
-**Goal:** establish GRIP as a disciplined project.
+### Gate 3 — Paquetes por rubro
 
-Required outcomes:
+**Objetivo:** agrupar automatizaciones ya probadas en ejemplos comerciales por sector.
 
-- repository and initial documentation;
-- brand decision registered;
-- sources register initialized;
-- security rules defined;
-- benchmark protocol defined;
-- first product candidate brief defined.
+Ejemplo peluquería:
 
-### Gate 1 — Intelligence Benchmark
+```text
+Agenda automática + recordatorio + reseña posterior
+```
 
-**Goal:** evaluate the intelligence and tooling layers through real tests.
+El paquete no invalida la venta individual de cada módulo.
 
-Required test cases:
+### Gate 4 — Lanzamiento comercial
 
-1. International offer discovery: find and extract automation offers for salons/barber shops.
-2. Local opportunity discovery: identify public signals from Mendoza-area businesses relevant to GRIP Beauty.
-3. Source/template discovery: identify reusable building blocks with license and technical data.
-4. Provider comparison: cost, output quality, evidence, repeatability, permissions and operational fit.
+**Objetivo:** publicar GRIP con un catálogo real, demos y oferta clara.
 
-### Gate 2 — Vertical Selection
+## 8. Próximas tareas inmediatas
 
-**Goal:** decide which vertical GRIP should actively sell first.
-
-Evaluation criteria:
-
-- identifiable economic pain;
-- access to customers;
-- demo simplicity;
-- recurring revenue potential;
-- operational/legal risk;
-- reuse across later products;
-- evidence from Gate 1.
-
-### Gate 3 — Demonstrator Product
-
-**Goal:** build and test one complete product demo.
-
-Minimum closure requirements:
-
-- functional end-to-end flow;
-- controlled demo data;
-- duplicate/failure test cases;
-- integration and secrets architecture documented;
-- sales-ready demo and product explanation.
-
-### Gate 4 — Public Brand Launch
-
-**Goal:** launch GRIP commercially from a real, demonstrable product.
-
-Required outcomes:
-
-- name/handle/domain/trademark checks recorded;
-- brand assets finalized;
-- public profiles/landing page;
-- demo content;
-- offer and initial prospecting plan.
-
-## 7. Immediate next tasks
-
-1. Audit the two seed repositories at workflow/file level.
-2. Record licenses and restrictions in the source register.
-3. Define benchmark scorecards for tool gateway, research and execution runtime.
-4. Decide the first real intelligence experiment.
-5. Only then provision external paid tools or begin product implementation.
+1. Crear el catálogo maestro de automatizaciones modulares.
+2. Registrar la corrección de dirección estratégica en el Decision Log.
+3. Auditar los templates de los dos repositorios semilla y volcarlos al catálogo según utilidad.
+4. Elegir tres automatizaciones simples para demos iniciales, sin casarnos con un rubro.
+5. Investigar qué tipos de automatizaciones se venden con mayor claridad y velocidad en mercados más maduros.
