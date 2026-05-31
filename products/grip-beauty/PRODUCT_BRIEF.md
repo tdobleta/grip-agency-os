@@ -1,118 +1,97 @@
-# GRIP Beauty — Product Brief v0.1
+# GRIP — Ejemplo por Rubro: Peluquerías y Barberías v0.2
 
-**Status:** First practical demonstrator / validation candidate  
-**Vertical:** Peluquerías y barberías  
-**Created:** 2026-05-30
+**Status:** Ejemplo comercial / no es producto central  
+**Rubro mostrado:** Peluquerías y barberías  
+**Created:** 2026-05-30  
+**Corrected:** 2026-05-30
 
-## 1. Product statement
+## 1. Aclaración de estructura
 
-**GRIP Beauty** is a booking and retention automation system for peluquerías and barberías that receive client enquiries through messaging and lose time, bookings or revenue through manual coordination and no-shows.
+Este archivo no define una línea de producto obligatoria llamada `GRIP Beauty`.
 
-### Working sales promise
+GRIP vende **automatizaciones modulares**. Este documento solo muestra cómo algunos módulos del catálogo podrían combinarse para una peluquería o barbería.
 
-> Tus clientes consultan por WhatsApp, eligen turno, pagan una seña y reciben confirmación automáticamente.
+Una peluquería podría contratar:
 
-This promise is provisional and may only be used commercially once the demonstrated flow can actually support it.
+- solamente recordatorios;
+- solamente registro de clientes en CRM;
+- solamente pedido automático de reseña;
+- agenda automática;
+- o un conjunto de varias automatizaciones conectadas.
 
-## 2. Problem hypothesis
+## 2. Módulos aplicables al ejemplo
 
-A typical salon/barber shop may experience:
+| Module ID | Automatización | Se vende sola | Puede combinarse |
+|---|---|---:|---:|
+| `AUT-MSG-001` | Respuesta automática inicial | Sí | Sí |
+| `AUT-CRM-001` | Guardar consulta/cliente en CRM | Sí | Sí |
+| `AUT-BOOK-001` | Crear turno automáticamente | Sí | Sí |
+| `AUT-BOOK-002` | Consultar disponibilidad | En general como complemento | Sí |
+| `AUT-REM-001` | Recordatorio de turno | Sí | Sí |
+| `AUT-PAY-001/002` | Seña/pago y confirmación | Según necesidad | Sí |
+| `AUT-RET-001` | Pedido de reseña | Sí | Sí |
+| `AUT-RET-002` | Recordatorio para volver a reservar | Sí | Sí |
 
-- interruptions while working to answer WhatsApp messages;
-- slow replies that lose potential bookings;
-- manual scheduling errors;
-- reservations with no deposit and avoidable no-shows;
-- no structured customer history;
-- no automatic rebooking or review follow-up.
+## 3. Ejemplos de ofertas vendibles
 
-These are hypotheses to validate with public research and customer conversations.
+### Oferta simple A — Recordatorios automáticos
 
-## 3. Intended experience
+> Antes de cada turno, tus clientes reciben un recordatorio automático para reducir olvidos y ayudarte a ordenar la agenda.
 
-### Customer-facing flow
+Módulo central: `AUT-REM-001`.
+
+### Oferta simple B — Clientes ordenados en CRM
+
+> Cada persona que consulta por un turno queda registrada automáticamente para que no pierdas contactos ni seguimiento.
+
+Módulo central: `AUT-CRM-001`.
+
+### Oferta simple C — Reseñas posteriores
+
+> Después de una atención, enviás automáticamente un mensaje para pedir reseña o volver a reservar.
+
+Módulos centrales: `AUT-RET-001` o `AUT-RET-002`.
+
+### Ejemplo de paquete compuesto — Reserva completa
 
 ```text
-1. Customer sends a WhatsApp message.
-2. System welcomes them and identifies intent to book.
-3. Customer selects a service.
-4. System presents available time slots based on service duration.
-5. Customer chooses a slot.
-6. System issues a deposit payment link.
-7. Only after trusted payment confirmation, the appointment is confirmed.
-8. Customer receives confirmation and reminder.
-9. After attendance, customer may receive a review or rebooking request.
+Consulta entrante
+ -> registro del cliente
+ -> turno/agendado
+ -> recordatorio
+ -> reseña o rebooking
 ```
 
-### Business-facing value
+La seña/pago solo se incorpora si ese negocio lo necesita y si la implementación financiera está validada correctamente.
 
-- fewer manual scheduling messages;
-- fewer unconfirmed bookings/no-shows;
-- cleaner calendar;
-- recoverable customer data;
-- a visible follow-up process.
+## 4. Demo recomendada para este rubro
 
-## 4. MVP demonstrator scope — not yet production scope
+Una demo visual de peluquería puede mostrar módulos separados mediante escenas simples:
 
-The first demo should show:
+1. Cliente consulta por WhatsApp.
+2. Se registra el contacto en una base/CRM.
+3. Se agenda un turno o se confirma una reserva de prueba.
+4. Se dispara un recordatorio.
+5. Se envía un pedido de reseña después del servicio.
 
-- a fictional barber shop with three services;
-- available slots for a test week;
-- a WhatsApp-like simulated interaction or sandbox channel;
-- a test deposit/payment confirmation path;
-- booking registration in a safe test database or table;
-- confirmation/reminder states;
-- simple owner-facing booking view or report.
+No es necesario construir todo el paquete para poder vender primero un módulo simple.
 
-The first demo must not use a real customer's messaging or payment credentials.
+## 5. Seguridad y prueba
 
-## 5. Candidate integrations — subject to benchmark
+Cada módulo debe probarse según lo que hace:
 
-| Capability | Candidate type, not selected yet |
-|---|---|
-| Conversation channel | WhatsApp Business API or controlled simulation for demo |
-| Schedule/availability | Calendar API or database-backed scheduling model |
-| Deposit/payment | Mercado Pago sandbox/test integration |
-| Data layer | Postgres/Supabase candidate |
-| Workflow/runtime | To be benchmarked; source templates may use n8n but production core is undecided |
-| AI interpretation | Optional for later; first reliability test should not depend entirely on free-form AI decisions |
-| Owner reporting | Basic database view/dashboard/report |
+| Módulo | Riesgo principal | Prueba mínima |
+|---|---|---|
+| CRM | datos duplicados o mal guardados | un lead nuevo se registra una sola vez y con campos correctos |
+| Turno | doble reserva o agenda incorrecta | turno creado correctamente; conflicto controlado si aplica |
+| Recordatorio | mensaje equivocado o fuera de horario | se envía a contacto de prueba en momento configurado |
+| Pago/seña | confirmación falsa o duplicada | solo evento confiable cambia estado y no se duplica |
+| Reseña/rebooking | spam o momento incorrecto | reglas claras de cuándo y a quién se envía |
 
-## 6. Required safety and reliability tests
+## 6. Uso comercial correcto
 
-The product cannot be treated as sellable until the relevant version proves:
+Los contenidos por rubro de GRIP deberán decir:
 
-| Test | Expected outcome |
-|---|---|
-| Valid booking and valid deposit | One confirmed appointment is created |
-| Customer abandons before payment | No confirmed appointment |
-| Payment rejected | No confirmed appointment; clear recovery path |
-| Duplicate payment webhook | Does not create duplicate appointment or duplicate confirmation |
-| Slot conflict before confirmation | Does not incorrectly double-book; controlled recovery flow |
-| Reminder task fails | Logged retry/recovery behavior |
-| Customer requests cancellation/rebooking | Defined manual or automated path |
-| Credential review | No secrets in repository or frontend/prompt content |
+> “Estas son automatizaciones que podemos instalar en una peluquería.”
 
-## 7. Evidence needed before choosing this as first sales vertical
-
-- local interviews or documented conversations with salon/barber owners;
-- public opportunity signals from Mendoza-area candidates;
-- competitor offer patterns from advanced markets;
-- cost of delivering the system safely;
-- willingness-to-pay estimate;
-- comparison against GRIP Food and GRIP Stay opportunities.
-
-## 8. Demo assets to create later
-
-- fictional business name and profile;
-- conversation storyboard;
-- demo screen recording;
-- one-page offer explanation;
-- Instagram highlight mockup for `Beauty`;
-- pricing hypothesis only after cost/demand validation.
-
-## 9. Current next actions
-
-1. Audit salon-related source workflows in the seed repositories.
-2. Design first market intelligence experiment for salons/barbers.
-3. Benchmark candidate runtime/integration strategy for the booking + deposit flow.
-4. Build only after test architecture is selected.
+No deberán comunicar que GRIP es únicamente una plataforma para peluquerías ni que todos los módulos deben contratarse juntos.
