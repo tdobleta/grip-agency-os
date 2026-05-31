@@ -1,185 +1,223 @@
-# GRIP — Arquitectura del Catálogo Comercial v0.1
+# GRIP — Arquitectura Comercial por Planes Verticales v0.2
 
 **Fecha:** 2026-05-30  
 **Estado:** Dirección comercial confirmada por el fundador
 
 ## 1. Modelo exacto
 
-GRIP vende automatizaciones individuales y combinables.
+GRIP construye automatizaciones modulares por dentro, pero las vende hacia afuera como **planes integrados por rubro**.
 
-La experiencia pública se organiza por **rubro** porque el cliente entiende más rápido una solución cuando la ve aplicada a su propio negocio. Dentro de cada destacada, landing o presentación por rubro, GRIP muestra una **línea de automatizaciones posibles**, donde cada módulo puede elegirse solo o en combinación con otros.
+El cliente no debe entrar a Instagram y encontrarse con una lista técnica de automatizaciones aisladas para armar. Debe ver soluciones completas, simples y escalonadas según el nivel de operación que quiera automatizar.
 
 ```text
-Destacada: HOTELERÍA
+GRIP construye módulos internos:
+respuesta + reserva + seguimiento + reseñas + CRM + reportes
 
-Consulta automática ─── Registro en CRM ─── Seguimiento ─── Reserva ─── Recordatorio ─── Check-in ─── Reseña ─── Reporte
-      ○                    ○                  ○              ○             ○              ○             ○            ○
-
-El cliente elige:       [CRM] + [Seguimiento] + [Recordatorio]
+GRIP vende planes visibles:
+Plan Inicial      Plan Premium      Plan Deluxe
 ```
 
-La línea punteada representa el recorrido posible del negocio, no una obligación de contratar un sistema completo.
+Cada plan combina automatizaciones con un resultado comercial entendible. Cuando el cliente consulta, se puede ajustar el plan a su operación, pero la vidriera vende paquetes claros.
 
 ## 2. Dos estructuras simultáneas
 
-### Estructura interna — por tipo de automatización
+### Estructura interna — biblioteca modular
 
-Se usa para construir, auditar, mantener y reutilizar módulos.
+Se usa para investigar templates, construir, reutilizar, probar y mantener automatizaciones.
 
 ```text
-Catálogo interno
-├── CRM y datos
-├── Agenda y reservas
-├── Recordatorios y notificaciones
-├── Atención automática
-├── Pagos y estados
-├── Retención y reputación
-└── Reportes y operación
+Módulos internos
+├── Respuesta inteligente
+├── Captura y CRM
+├── Disponibilidad / agenda
+├── Reserva o turno
+├── Recordatorio
+├── Seguimiento
+├── Reseñas
+├── Pagos / señas
+├── Reportes
+└── Reactivación de clientes
 ```
 
-### Estructura pública — por rubro
+### Estructura comercial — planes por rubro
 
-Se usa para vender y para mostrar al cliente qué puede automatizar en su realidad.
+Se usa en Instagram, landing, demos y venta.
 
 ```text
-Destacadas / Landing
+Destacadas GRIP
 ├── Hotelería
+│   ├── Plan Inicial
+│   ├── Plan Premium
+│   └── Plan Deluxe
 ├── Peluquerías
-├── Gastronomía
-├── Inmobiliarias
-├── Clínicas/estética, solo cuando corresponda por datos y cumplimiento
-└── Otros rubros validados
+│   ├── Plan Inicial
+│   ├── Plan Premium
+│   └── Plan Deluxe
+└── Gastronomía
+    ├── Plan Inicial
+    ├── Plan Premium
+    └── Plan Deluxe
 ```
 
-## 3. Cómo debe verse una destacada
+## 3. Regla de diseño de los planes
 
-Cada destacada por rubro debe seguir un formato claro:
+Cada rubro tendrá tres niveles de oferta:
 
-### Historia 1 — Dolor del rubro
+| Nivel | Qué debe comunicar | Qué evita |
+|---|---|---|
+| **Inicial** | Resolver el problema principal con una experiencia simple | Parecer caro o excesivo para un negocio chico |
+| **Premium** | Capturar más oportunidades y mejorar seguimiento/reputación | Vender solo eficiencia sin impacto visible |
+| **Deluxe** | Ordenar operación, datos y crecimiento con sistema completo | Quedarse en un bot aislado sin inteligencia de negocio |
 
-Ejemplo hotelería:
+Los nombres finales pueden cambiar luego (`Base`, `Growth`, `Full System`; o nombres más de marca), pero la lógica de tres niveles queda definida.
 
-> Consultas que llegan tarde, huéspedes sin seguimiento y tareas repetitivas que todavía se hacen a mano.
+## 4. Cómo debe verse una destacada por rubro
 
-### Historia 2 — Línea de automatizaciones posibles
+### Historia 1 — Presentación del problema
 
-Visual central: línea punteada o circuito con módulos individuales.
+Explica el dolor principal del rubro sin hablar todavía de tecnología.
+
+### Historia 2 — Qué hace GRIP en ese rubro
+
+Muestra el recorrido completo posible de automatización, no para elegir piezas sueltas sino para comprender el potencial.
+
+### Historia 3 — Plan Inicial
+
+Muestra el sistema mínimo que ya genera valor.
+
+### Historia 4 — Plan Premium
+
+Muestra cómo se amplía el flujo para seguimiento, experiencia y reputación.
+
+### Historia 5 — Plan Deluxe
+
+Muestra el sistema más completo: CRM, datos, reportes, recuperación y operación integrada.
+
+### Historia final — CTA
+
+> Elegimos el plan según cómo trabaja hoy tu negocio y lo adaptamos a tu operación.
+
+## 5. Ejemplo confirmado de estructura: Hotelería
+
+La hotelería/cabañas/alojamientos es un rubro con muchas oportunidades de automatización porque el recorrido del huésped tiene varias etapas:
 
 ```text
-Consulta
-  · · · CRM
-  · · · Disponibilidad
-  · · · Reserva
-  · · · Recordatorio
-  · · · Check-in
-  · · · Reseña
-  · · · Reporte
+Consulta → Disponibilidad/Reserva → Confirmación → Antes de llegar → Estadía → Después de irse → Nueva visita
 ```
 
-### Historias 3 en adelante — Cada automatización individual
+### Plan Inicial — Respuesta & Reserva
 
-Una historia por módulo, explicando una sola acción:
-
-- qué dispara la automatización;
-- qué hace sola;
-- qué problema evita;
-- con qué otras puede combinarse.
-
-### Historia final — Selección personalizada
-
-> Elegí las automatizaciones que tu negocio necesita. GRIP las conecta y las deja funcionando.
-
-CTA provisional:
-
-> Contanos qué tarea repetitiva querés automatizar.
-
-## 4. Ejemplo: Hotelería
-
-### Línea de módulos posibles
-
-| Orden visual | Automatización que se muestra | Puede venderse sola | Combina bien con |
-|---:|---|---:|---|
-| 1 | Responder consulta inicial automáticamente | Sí | CRM, disponibilidad, seguimiento |
-| 2 | Guardar huésped interesado en CRM | Sí | seguimiento, reserva, reportes |
-| 3 | Enviar seguimiento si no reservó | Sí | CRM, consulta inicial |
-| 4 | Registrar o confirmar reserva | Sí | recordatorio, pagos, check-in |
-| 5 | Enviar recordatorio antes de llegada | Sí | reserva, check-in |
-| 6 | Enviar instrucciones de check-in | Sí | reserva confirmada |
-| 7 | Pedir reseña luego de la estadía | Sí | checkout/registro de estadía |
-| 8 | Generar reporte automático | Sí | CRM/reservas/datos existentes |
-
-### Ejemplos de combinaciones elegidas por el cliente
-
-**Hotel pequeño que solo necesita orden:**
+**Objetivo:** dejar de perder consultas y convertirlas en solicitudes o reservas ordenadas.
 
 ```text
-Consulta → CRM → Notificación al dueño
+Consulta por WhatsApp
+ → agente de respuesta inteligente
+ → recopila fechas, huéspedes y tipo de alojamiento
+ → informa opciones aprobadas o deriva disponibilidad
+ → registra solicitud / crea reserva si la integración lo permite
+ → envía confirmación inicial
 ```
 
-**Cabañas que pierden seguimientos:**
+**Incluye:**
+
+- agente de respuesta por WhatsApp para preguntas y solicitud de reserva;
+- captura de fechas, cantidad de huéspedes y necesidad principal;
+- confirmación automática de recepción/reserva según sistema disponible;
+- notificación al alojamiento cuando llega una consulta/reserva relevante;
+- historial básico de consultas o reservas gestionadas.
+
+**Nota operativa:** “reserva automática” solo puede prometerse cuando exista integración confiable con agenda, motor de reservas o disponibilidad real del alojamiento. Sin esa integración, se vende como captura inteligente + solicitud/confirmación asistida.
+
+### Plan Premium — Reserva & Experiencia
+
+**Objetivo:** sumar seguimiento y mejorar la experiencia del huésped, aumentando las oportunidades de conversión y de reseñas sin prometer resultados garantizados.
 
 ```text
-Consulta → CRM → Seguimiento automático → Recordatorio
+Todo el Plan Inicial
+ → seguimiento automático si consultó y no completó reserva
+ → recordatorio previo a llegada
+ → mensaje con información útil de check-in
+ → solicitud de reseña después de la estadía
 ```
 
-**Alojamiento con proceso más completo:**
+**Incluye:**
+
+- todo el Plan Inicial;
+- seguimiento de consultas que no avanzaron, con reglas definidas;
+- recordatorio antes de la llegada;
+- instrucciones automáticas de check-in, ubicación, horarios o recomendaciones aprobadas;
+- solicitud automática de reseña en Google después de la estadía;
+- alertas internas sobre consultas pendientes o próximas llegadas.
+
+**Cómo se vende bien:** no decir “más probabilidades de reseñas” como garantía; decir “el sistema solicita reseñas en el momento definido para que no dependa de hacerlo manualmente”.
+
+### Plan Deluxe — Operación & Retención
+
+**Objetivo:** convertir la atención y las reservas en una base operativa para seguimiento, repetición y decisiones del negocio.
 
 ```text
-Consulta → Reserva → Recordatorio → Check-in → Reseña → Reporte
+Todo el Plan Premium
+ → CRM de huéspedes e interesados
+ → clasificación de consultas/reservas
+ → segmentación y reactivación
+ → reportes automáticos
+ → recuperación de huéspedes anteriores
+ → integraciones avanzadas según sistema del alojamiento
 ```
 
-## 5. Ejemplo: Peluquerías / Barberías
+**Incluye:**
 
-```text
-Consulta ─── CRM ─── Turno ─── Recordatorio ─── Seña opcional ─── Reseña ─── Volver a reservar
-```
+- todo el Plan Premium;
+- CRM de interesados y huéspedes con historial operativo permitido;
+- clasificación de consultas: nueva reserva, pendiente, confirmada, huésped pasado, seguimiento;
+- mensajes de reactivación para huéspedes anteriores bajo reglas/consentimiento aplicables;
+- reporte automático de consultas, reservas, seguimientos y reseñas solicitadas;
+- integración adicional con calendario, PMS, formulario web, email u otros sistemas del alojamiento cuando sea técnicamente viable;
+- derivación humana y alertas para casos que el agente no debe resolver solo.
 
-Módulos vendibles individuales:
+## 6. Resumen comercial de Hotelería
 
-- guardar clientes que consultan;
-- agendar turnos;
-- recordar citas;
-- cobrar seña, solo si se implementa y valida correctamente;
-- pedir reseñas;
-- recordar nuevo corte después de X días.
+| Plan | Resultado visible | Automatizaciones combinadas |
+|---|---|---|
+| **Inicial** | Responde y ordena consultas/reservas | WhatsApp inteligente + captura + confirmación/notificación |
+| **Premium** | Acompaña al huésped y activa reputación | Inicial + seguimiento + pre-llegada/check-in + solicitud de reseña |
+| **Deluxe** | Construye operación y retención medible | Premium + CRM + segmentación + reactivación + reportes + integraciones |
 
-## 6. Ejemplo: Gastronomía
+## 7. Cómo se comunica sin mentir
 
-```text
-Consulta ─── Reserva ─── Confirmación ─── Recordatorio ─── Reseña ─── Base de clientes ─── Reporte
-```
+GRIP puede decir:
 
-Módulos vendibles individuales:
+- “Respondé consultas de huéspedes automáticamente por WhatsApp.”
+- “Automatizá seguimientos, recordatorios e instrucciones de llegada.”
+- “Solicitá reseñas sin depender de acordarte después de cada estadía.”
+- “Ordená interesados y huéspedes en un CRM con reportes automáticos.”
 
-- responder consultas de reserva;
-- registrar una reserva;
-- confirmar asistencia;
-- pedir reseña luego de visita;
-- guardar clientes frecuentes;
-- enviar reportes de reservas o consultas.
+GRIP no debe prometer sin prueba ni datos:
 
-## 7. Regla comercial principal
+- “Aumentamos tus reservas X%.”
+- “Garantizamos más reseñas.”
+- “Reserva automática” si el alojamiento no tiene disponibilidad integrable y validada.
+- “Atiende todo sin intervención humana.”
 
-GRIP no debe decir:
+## 8. Implicación para las demás destacadas
 
-> “Comprá nuestro sistema completo para hoteles.”
+El mismo modelo se replica por rubro, pero cada plan combina módulos según su operación:
 
-GRIP debe decir:
+### Peluquerías / Barberías
 
-> “Estas son las tareas que podemos automatizar en tu hotel. Elegís las que necesitás y las conectamos para que funcionen juntas.”
+- **Inicial:** respuesta + toma/confirmación de turnos.
+- **Premium:** inicial + recordatorios + reseñas + recordatorio para volver.
+- **Deluxe:** premium + CRM + señas/pagos, reportes y campañas de reactivación, cuando esté validado.
 
-## 8. Implicación para el catálogo y la tecnología
+### Gastronomía
 
-Cada automatización deberá tener dos etiquetas:
-
-1. **Familia funcional interna**: CRM, reservas, recordatorios, pagos, etc.
-2. **Aplicaciones por rubro**: hotelería, peluquerías, gastronomía, servicios, etc.
-
-Así, un mismo módulo puede mostrarse en varias destacadas sin duplicar el trabajo técnico.
+- **Inicial:** consultas + reservas/confirmaciones.
+- **Premium:** inicial + recordatorios + reseñas + consultas frecuentes.
+- **Deluxe:** premium + base de clientes/eventos + campañas + reportes + integraciones avanzadas.
 
 ## 9. Próximo trabajo derivado
 
-1. Auditar templates existentes y mapear cada workflow a módulos individuales.
-2. Diseñar el primer mapa visual de automatizaciones para la destacada `Hotelería`.
-3. Crear luego los mapas equivalentes para `Peluquerías` y `Gastronomía`.
-4. Elegir las primeras automatizaciones que puedan demostrarse de forma simple y segura.
+1. Crear el documento de oferta detallada para `Hotelería` con textos de historias/destacadas.
+2. Auditar templates semilla buscando módulos que soporten cada plan.
+3. Definir qué plan de Hotelería puede demostrarse primero sin depender de credenciales productivas.
+4. Crear luego planes equivalentes para Peluquerías y Gastronomía.
