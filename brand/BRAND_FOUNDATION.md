@@ -1,4 +1,4 @@
-# GRIP — Brand Foundation v0.1
+# GRIP — Brand Foundation v0.2
 
 **Status:** Initial internal foundation; public launch not yet authorized  
 **Date:** 2026-05-30
@@ -6,111 +6,123 @@
 ## 1. Brand decision
 
 - **Master brand:** GRIP
-- **Category:** Automation systems agency for operational conversion and retention
+- **Category:** Agencia de automatizaciones prácticas para negocios
 - **Founder-selected asset:** monochrome logo with geometric `G` symbol and `Grip` wordmark in white on black.
 
-## 2. What GRIP means in the business
+## 2. Qué significa GRIP
 
-GRIP is not presented as an AI novelty shop or generic automation service. The brand must represent control over missed opportunities:
+GRIP representa control sobre tareas y oportunidades que hoy se pierden por trabajo manual, demora o desorden.
 
-- an enquiry becomes a response;
-- a response becomes a booking;
-- a booking becomes a confirmed payment/deposit;
-- a completed service becomes a review or return visit;
-- operational chaos becomes a trackable system.
+GRIP puede automatizar una sola acción o unir varias:
 
-## 3. Positioning under development
+- una consulta se guarda como lead;
+- un turno genera un recordatorio;
+- una visita genera una solicitud de reseña;
+- un formulario activa una notificación;
+- un pago actualiza un registro;
+- una tarea repetitiva deja de depender de que alguien se acuerde.
 
-### Working positioning statement
+## 3. Posicionamiento bajo desarrollo
 
-> GRIP instala sistemas que convierten consultas en reservas, pagos y clientes recurrentes para negocios que hoy dependen de responder todo manualmente.
+### Propuesta principal de trabajo
 
-### Working short line
+> **GRIP automatiza tareas repetitivas de negocios: turnos, recordatorios, datos, leads, pagos, seguimientos y reportes.**
 
-> Agarrá cada oportunidad.
+### Frase corta a seguir probando
 
-These are working statements, not final advertising copy. They must be refined after competitor intelligence and customer validation.
+> **Agarrá cada oportunidad.**
 
-## 4. Brand architecture hypothesis
+Estas frases son base interna. Se deben ajustar cuando tengamos catálogo, demos e investigación comercial suficiente.
+
+## 4. Estructura pública correcta
+
+GRIP es una sola marca. Los rubros no son subproductos obligatorios, sino categorías para que un cliente entienda ejemplos aplicados a su mundo.
 
 ```text
 GRIP
-├── Beauty   — peluquerías, barberías y estética
-├── Food     — gastronomía y reservas
-├── Stay     — alojamientos y hospitalidad
-└── Custom   — validated later, not an initial public focus
+├── Automatizaciones
+│   ├── Agenda y reservas
+│   ├── Recordatorios
+│   ├── CRM y datos
+│   ├── Respuestas y atención
+│   ├── Pagos y estados
+│   ├── Seguimiento y reseñas
+│   └── Reportes y operación interna
+│
+└── Ejemplos por rubro
+    ├── Peluquerías
+    ├── Hotelería
+    ├── Gastronomía
+    ├── Servicios
+    └── Otros negocios
 ```
 
-Initial public-facing naming format to test:
+### Posible organización de destacadas de Instagram
 
-- `GRIP Beauty`
-- `GRIP Food`
-- `GRIP Stay`
+```text
+Turnos | Recordatorios | CRM | WhatsApp | Reseñas | Peluquerías | Hotelería | Gastronomía | Demos
+```
 
-Alternative presentation to evaluate later: a single `GRIP` brand with Instagram highlights named `Peluquerías`, `Gastronomía`, `Hotelería` rather than sub-brand labels.
+La selección final dependerá de las primeras demos y del espacio visual disponible.
 
-## 5. Visual direction from the initial logo
+## 5. Dirección visual desde el logo inicial
 
-The supplied logo gives GRIP a useful starting identity:
+El logo aportado da una base útil:
 
-- monochrome, high-contrast, technology-first;
-- geometric symbol suitable for app icon, avatar and watermark;
-- minimal wordmark usable on landing pages and demos;
-- serious and controlled rather than playful or artisanal.
+- monocromo y de alto contraste;
+- estética tecnológica, limpia y controlada;
+- isotipo apto para avatar y marca de agua;
+- wordmark utilizable en demos, landing y propuestas.
 
-### Assets still required before launch
+### Activos faltantes antes de lanzamiento
 
-- source vector/SVG recreation or confirmation;
-- horizontal white-on-black logo;
-- black-on-white version;
-- transparent logo and icon-only files;
-- Instagram profile avatar crop;
-- typography system;
-- UI/creative layout system;
-- legal/availability review for brand use.
+- vector/SVG del logo;
+- versión blanca sobre negro;
+- versión negra sobre blanco;
+- PNG/SVG transparente;
+- isotipo aislado para perfil;
+- tipografía y reglas de uso;
+- templates para demostraciones y publicaciones;
+- verificación práctica/legal de nombre, dominio y handles.
 
-## 6. Brand communication rules
+## 6. Cómo debe comunicar GRIP
 
-### GRIP should say
+### Siempre desde la automatización concreta
 
-- what business problem is solved;
-- what action becomes automatic;
-- what the owner saves or gains;
-- what the customer sees;
-- what proof/demo exists.
+Ejemplos correctos:
 
-### GRIP should avoid saying without evidence
+- “Cuando entra una consulta, sus datos quedan guardados automáticamente en tu CRM.”
+- “Tus turnos reciben un recordatorio automático antes de la cita.”
+- “Después de cada visita, el sistema envía el pedido de reseña.”
+- “Cuando ingresa un lead, recibís una alerta ordenada con toda la información.”
 
-- “increase revenue” with a percentage;
-- “eliminate no-shows”;
-- “fully autonomous”;
-- “AI employee”;
-- “works with any business instantly”;
-- any claim based only on international competitor marketing.
+### Evitar mensajes vagos o no probados
 
-## 7. Initial message territory for GRIP Beauty
+- “IA para transformar tu empresa.”
+- “Empleado autónomo 24/7.”
+- “Eliminamos tus ausencias.”
+- “Duplicá tus ventas.”
+- “Automatizamos todo en minutos.”
 
-### Problem
+## 7. Cómo entran los rubros en la marca
 
-Turnos perdidos, mensajes sin responder y clientes que reservan pero no confirman.
+Un rubro sirve para contextualizar un módulo:
 
-### System
+| Automatización | Ejemplo peluquería | Ejemplo hotelería | Ejemplo servicios |
+|---|---|---|---|
+| Recordatorio | Recordar corte reservado | Recordar check-in | Recordar cita técnica |
+| CRM | Guardar cliente que pregunta por turno | Guardar huésped interesado | Guardar nuevo lead |
+| Reseña | Solicitar reseña tras corte | Solicitar reseña tras estadía | Solicitar reseña tras servicio |
+| Respuesta inicial | Mostrar cómo reservar | Responder consulta de disponibilidad | Confirmar recepción de solicitud |
 
-Consulta por WhatsApp → horario disponible → seña → confirmación → recordatorio → reseña/rebooking.
+La automatización es la misma familia; la demostración cambia según el sector.
 
-### Working demonstration headline
+## 8. Pre-lanzamiento
 
-> Tu barbería puede tomar turnos y cobrar señas mientras vos seguís atendiendo.
+Antes de publicar GRIP activamente o invertir en publicidad:
 
-This line is suitable for internal demo development; public claims require a functioning demonstrator.
-
-## 8. Pre-launch requirements
-
-Before making GRIP public or purchasing advertising:
-
-- verify name availability at a practical and legal level in intended markets;
-- verify domain and social handles;
-- establish a real demonstrator;
-- define exactly what is included and excluded from the first offer;
-- complete security review for any connected payment/messaging system;
-- record evidence behind the first market claim.
+- verificar nombre, dominio y usuarios sociales;
+- definir tres a cinco automatizaciones demostrables;
+- especificar con precisión alcance, integración y limitaciones;
+- revisar seguridad para cualquier conexión real;
+- preparar material comercial basado en capacidades que efectivamente funcionan.
