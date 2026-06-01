@@ -97,7 +97,6 @@
         "specifyBody": "json",
         "jsonBody": "={\n  \"p_business_id\": \"{{$json.business_id}}\",\n  \"p_service_id\": \"{{$json.service_id}}\",\n  \"p_local_date\": \"{{$json.date}}\",\n  \"p_slot_step\": \"5 minutes\"\n}",
         "options": {
-          "ignoreResponseCode": true,
           "response": {
             "response": {
               "responseFormat": "json"
@@ -190,6 +189,7 @@
         "specifyBody": "json",
         "jsonBody": "={\n  \"p_business_id\": \"{{$json.business_id}}\",\n  \"p_service_id\": \"{{$json.service_id}}\",\n  \"p_professional_id\": \"{{$json.professional_id}}\",\n  \"p_starts_at\": \"{{$json.selected_start_at}}\",\n  \"p_customer_label\": \"{{$json.customer_label}}\"\n}",
         "options": {
+          "ignoreResponseCode": true,
           "response": {
             "response": {
               "responseFormat": "json"
