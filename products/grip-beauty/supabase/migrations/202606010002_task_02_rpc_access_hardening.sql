@@ -31,6 +31,22 @@ begin
   revoke all on all sequences in schema grip_beauty from public;
   revoke all on all functions in schema grip_beauty from public;
 
+  execute format(
+    'alter default privileges for role %I in schema grip_beauty revoke execute on functions from public',
+    current_user
+  );
+
+  foreach v_role in array array['anon', 'authenticated']
+  loop
+    if exists (select 1 from pg_roles where rolname = v_role) then
+      execute format(
+        'alter default privileges for role %I in schema grip_beauty revoke execute on functions from %I',
+        current_user,
+        v_role
+      );
+    end if;
+  end loop;
+
   foreach v_backend_role in array array['service_role', 'postgres']
   loop
     if exists (select 1 from pg_roles where rolname = v_backend_role) then
@@ -47,6 +63,22 @@ begin
         'grant execute on function grip_beauty.expire_holds(uuid, timestamptz) to %I',
         v_backend_role
       );
+
+      if v_backend_role = 'service_role' then
+        execute format(
+          'grant select on table %s to %I',
+          'grip_beauty.businesses, grip_beauty.professionals, grip_beauty.services, grip_beauty.professional_services, grip_beauty.working_hours, grip_beauty.calendar_blocks, grip_beauty.appointments',
+          v_backend_role
+        );
+        execute format(
+          'grant insert, update on table grip_beauty.appointments to %I',
+          v_backend_role
+        );
+        execute format(
+          'revoke delete on table grip_beauty.appointments from %I',
+          v_backend_role
+        );
+      end if;
     end if;
   end loop;
 end;

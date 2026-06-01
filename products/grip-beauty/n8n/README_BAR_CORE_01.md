@@ -28,6 +28,13 @@ Antes del primer run, aplicar en Supabase:
 2. `products/grip-beauty/supabase/seed_task_01_demo.sql`
 3. `products/grip-beauty/supabase/migrations/202606010002_task_02_rpc_access_hardening.sql`
 
+Antes de importar o ejecutar el workflow:
+
+1. En Supabase Dashboard, abrir **API Settings**.
+2. Agregar `grip_beauty` en **Exposed schemas**.
+
+Exponer el schema a la Data API no abre acceso publico por si mismo: `anon` y `authenticated` permanecen sin permisos directos, y n8n usa exclusivamente la credencial privada backend.
+
 Ejecutar manualmente el workflow con el input demo ya cargado:
 
 - `business_id`: `11111111-1111-4111-8111-111111111111`
