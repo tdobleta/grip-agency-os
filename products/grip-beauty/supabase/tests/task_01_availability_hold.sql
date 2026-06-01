@@ -8,12 +8,18 @@ declare
   v_lucas_id uuid := '22222222-2222-4222-8222-222222222222';
   v_cut_id uuid := '33333333-3333-4333-8333-333333333331';
   v_color_id uuid := '33333333-3333-4333-8333-333333333333';
+  v_manual_color_id uuid := '33333333-3333-4333-8333-333333333334';
   v_cut_start timestamptz := ('2030-06-03 10:00'::timestamp at time zone 'America/Argentina/Mendoza');
   v_color_last_valid timestamptz := ('2030-06-03 16:15'::timestamp at time zone 'America/Argentina/Mendoza');
   v_color_too_late timestamptz := ('2030-06-03 16:20'::timestamp at time zone 'America/Argentina/Mendoza');
+  v_outside_hours_start timestamptz := ('2030-06-03 08:00'::timestamp at time zone 'America/Argentina/Mendoza');
+  v_blocked_start timestamptz := ('2030-06-03 11:20'::timestamp at time zone 'America/Argentina/Mendoza');
   v_slot_count integer;
   v_hold grip_beauty.appointments%rowtype;
   v_duplicate_was_rejected boolean := false;
+  v_manual_service_was_rejected boolean := false;
+  v_outside_hours_was_rejected boolean := false;
+  v_calendar_block_was_rejected boolean := false;
   v_expired_count integer;
 begin
   select count(*) into v_slot_count
@@ -105,6 +111,89 @@ begin
 
   if v_slot_count <> 0 then
     raise exception 'Expected Coloracion slot exceeding 90 minutes plus 15 minute buffer to be absent, got %', v_slot_count;
+  end if;
+
+  select count(*) into v_slot_count
+    from grip_beauty.available_slots(v_business_id, v_manual_color_id, date '2030-06-03');
+
+  if v_slot_count <> 0 then
+    raise exception 'Expected non-auto-scheduled service to be absent from availability, got %', v_slot_count;
+  end if;
+
+  begin
+    perform grip_beauty.create_hold(
+      v_business_id,
+      v_manual_color_id,
+      v_lucas_id,
+      v_cut_start,
+      'demo_manual_service_test'
+    );
+  exception
+    when others then
+      if sqlerrm like '%requires human attention%' then
+        v_manual_service_was_rejected := true;
+      else
+        raise;
+      end if;
+  end;
+
+  if not v_manual_service_was_rejected then
+    raise exception 'Expected create_hold to reject non-auto-scheduled service';
+  end if;
+
+  begin
+    perform grip_beauty.create_hold(
+      v_business_id,
+      v_cut_id,
+      v_lucas_id,
+      v_outside_hours_start,
+      'demo_outside_hours_test'
+    );
+  exception
+    when others then
+      if sqlerrm like '%outside working hours%' then
+        v_outside_hours_was_rejected := true;
+      else
+        raise;
+      end if;
+  end;
+
+  if not v_outside_hours_was_rejected then
+    raise exception 'Expected create_hold to reject a slot outside working hours';
+  end if;
+
+  insert into grip_beauty.calendar_blocks (
+    professional_id,
+    starts_at,
+    ends_at,
+    reason
+  )
+  values (
+    v_lucas_id,
+    ('2030-06-03 11:30'::timestamp at time zone 'America/Argentina/Mendoza'),
+    ('2030-06-03 12:00'::timestamp at time zone 'America/Argentina/Mendoza'),
+    'Bloqueo temporal de test TASK 01'
+  );
+
+  begin
+    perform grip_beauty.create_hold(
+      v_business_id,
+      v_cut_id,
+      v_lucas_id,
+      v_blocked_start,
+      'demo_calendar_block_test'
+    );
+  exception
+    when others then
+      if sqlerrm like '%calendar block%' then
+        v_calendar_block_was_rejected := true;
+      else
+        raise;
+      end if;
+  end;
+
+  if not v_calendar_block_was_rejected then
+    raise exception 'Expected create_hold to reject a slot overlapping calendar_blocks';
   end if;
 end;
 $$;

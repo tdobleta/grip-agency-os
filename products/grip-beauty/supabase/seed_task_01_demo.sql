@@ -23,7 +23,8 @@ delete from grip_beauty.professional_services
     or service_id in (
   '33333333-3333-4333-8333-333333333331',
   '33333333-3333-4333-8333-333333333332',
-  '33333333-3333-4333-8333-333333333333'
+  '33333333-3333-4333-8333-333333333333',
+  '33333333-3333-4333-8333-333333333334'
  );
 
 delete from grip_beauty.services
@@ -72,7 +73,8 @@ insert into grip_beauty.services (
   price_ars,
   duration,
   buffer,
-  deposit_ars
+  deposit_ars,
+  auto_schedule
 )
 values
   (
@@ -82,7 +84,8 @@ values
     18000,
     interval '30 minutes',
     interval '5 minutes',
-    5000
+    5000,
+    true
   ),
   (
     '33333333-3333-4333-8333-333333333332',
@@ -91,7 +94,8 @@ values
     25000,
     interval '45 minutes',
     interval '5 minutes',
-    7000
+    7000,
+    true
   ),
   (
     '33333333-3333-4333-8333-333333333333',
@@ -100,7 +104,18 @@ values
     45000,
     interval '90 minutes',
     interval '15 minutes',
-    15000
+    15000,
+    true
+  ),
+  (
+    '33333333-3333-4333-8333-333333333334',
+    '11111111-1111-4111-8111-111111111111',
+    'Coloración especial con evaluación',
+    60000,
+    interval '120 minutes',
+    interval '20 minutes',
+    20000,
+    false
   );
 
 insert into grip_beauty.professional_services (professional_id, service_id)
@@ -120,6 +135,10 @@ values
   (
     '22222222-2222-4222-8222-222222222222',
     '33333333-3333-4333-8333-333333333333'
+  ),
+  (
+    '22222222-2222-4222-8222-222222222222',
+    '33333333-3333-4333-8333-333333333334'
   );
 
 insert into grip_beauty.working_hours (professional_id, iso_dow, starts_at, ends_at)

@@ -164,6 +164,7 @@ as $$
      where s.id = p_service_id
        and s.business_id = p_business_id
        and s.is_active
+       and s.auto_schedule
   ),
   eligible_windows as (
     select
@@ -261,6 +262,11 @@ begin
 
   if not found then
     raise exception 'Service % is not active for business %', p_service_id, p_business_id
+      using errcode = 'P0001';
+  end if;
+
+  if not v_service.auto_schedule then
+    raise exception 'Service % requires human attention and cannot be auto-scheduled', p_service_id
       using errcode = 'P0001';
   end if;
 
